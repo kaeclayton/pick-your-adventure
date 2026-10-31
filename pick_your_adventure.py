@@ -6,6 +6,7 @@ functions and modules to show my range of skills
 
 import random
 import csv
+import os
 
 def main():
     print("\nWelcome to Pick Your Adventure\n")
@@ -74,9 +75,9 @@ def main():
         sentence7 = make_ocean_sentence(quantity, tense)
         sentence8 = make_short_ocean_sentence(quantity, tense)
 
-        print (sentence1 + sentence2 + sentence3 + sentence4)
+        print (sentence1 , sentence2 , sentence3 , sentence4)
         print ()
-        print (sentence5 + sentence6 + sentence7 + sentence8)
+        print (sentence5 , sentence6 , sentence7 , sentence8)
 
     elif adventure_choice == "jungle":
         tense_list = ["past", "present", "future"]
@@ -95,9 +96,9 @@ def main():
         sentence7 = make_jungle_sentence(quantity, tense)
         sentence8 = make_short_jungle_sentence(quantity, tense)
 
-        print (sentence1 + sentence2 + sentence3 + sentence4)
+        print (sentence1 , sentence2 , sentence3 , sentence4)
         print ()
-        print (sentence5 + sentence6 + sentence7 + sentence8)   
+        print (sentence5 , sentence6 , sentence7 , sentence8)   
 
     elif adventure_choice == "random":
         adventure = random.choice(adventures_list).lower()
@@ -134,9 +135,9 @@ def main():
             sentence7 = make_ocean_sentence(quantity, tense)
             sentence8 = make_short_ocean_sentence(quantity, tense)
 
-            print (sentence1 + sentence2 + sentence3 + sentence4)
+            print (sentence1 , sentence2 , sentence3 , sentence4)
             print ()
-            print (sentence5 + sentence6 + sentence7 + sentence8)
+            print (sentence5 , sentence6 , sentence7 , sentence8)
 
         elif adventure == "jungle adventure":
             print (f"Hello {char_name}! Welcome to the Random Jungle Story. Enjoy!\n")
@@ -150,9 +151,9 @@ def main():
             sentence7 = make_jungle_sentence(quantity, tense)
             sentence8 = make_short_jungle_sentence(quantity, tense)
 
-            print (sentence1 + sentence2 + sentence3 + sentence4)
+            print (sentence1 , sentence2 , sentence3 , sentence4)
             print ()
-            print (sentence5 + sentence6 + sentence7 + sentence8)
+            print (sentence5 , sentence6 , sentence7 , sentence8)
 
         elif adventure == "random adventure":
             print (f"Hello {char_name}! Welcome to the Completely Random Story. Enjoy!\n")
@@ -170,35 +171,6 @@ def main():
             print (sentence1, sentence2, sentence3, sentence4)
             print ()
             print (sentence5, sentence6, sentence7, sentence8, sentence9)         
-    
-
-
-
-
-
-#def get_name_dictionary(filename, key_column_index):
-    """Read the contents of a CSV file into a compound dictionary
-    and return the dictionary.
-    Parameters:
-        filename: the name of the CSV file to read.
-        key_column_index: the index of the column to use as the 
-            keys in the dictionary.
-    Return: a compound dictionary that contains the contents of
-            the CSV file.
-    """    
-   # dictionary = {}
-#
-   # with open (filename, "rt") as csv_file:
-
-   #     reader = csv.reader(csv_file)
-   #     next(reader)
-
-   #     for row_list in reader:
-   #         if len(row_list) != 0:
-    #            key = row_list[key_column_index].strip().upper()
-    #            dictionary[key] = row_list           
-
-   # return dictionary
 
 def get_name_dictionary(filename, key_column_index):
     """Read the contents of a CSV file into a compound dictionary"""
@@ -213,11 +185,6 @@ def get_name_dictionary(filename, key_column_index):
                 if len(row) >= 3:  # Ensure we have enough columns
                     key = row[key_column_index].strip().upper()
                     dictionary[key] = row
-                    
-        # Debug print to verify dictionary
-        print("DEBUG: Dictionary contents:")
-        for key, value in dictionary.items():
-            print(f"{key}: {value}")
             
     except FileNotFoundError:
         print(f"ERROR: File '{filename}' not found in: {os.getcwd()}")
@@ -480,7 +447,7 @@ def get_verb(quantity, tense):
         "sing", "break", "fight", "believe", "need"
     If tense is "future", this function will return one of
     these ten verbs:
-        "will growl", "will run", "will chuckle", "will balk"
+        "will growl", "will run", "will chuckle", "will balk",
         "will cough", "will sing", "will break", "will fight", 
         "will believe", "will need"
     Parameters
@@ -497,7 +464,7 @@ def get_verb(quantity, tense):
         "sings", "breaks", "fights", "believes", "needs"]
     present_plural_verbs = ["growl", "run", "chuckle", "balk", "cough",
         "sing", "break", "fight", "believe", "need"]
-    future_tense_verbs = ["will growl", "will run", "will chuckle", "will balk"
+    future_tense_verbs = ["will growl", "will run", "will chuckle", "will balk",
         "will cough", "will sing", "will break", "will fight", 
         "will believe", "will need"]
     
