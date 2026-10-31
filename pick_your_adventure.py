@@ -586,8 +586,8 @@ def get_adverb():
     """Return a randomly chosen adverb from this list
     of adverbs:
         "actively", "aggressively", "assertively", "boldly",
-        "consistently", "curiously", "eagerly", "humourously",
-        "quietly", "seriously", "succesfully", "tactfully"
+        "consistently", "curiously", "eagerly", "humorously",
+        "quietly", "seriously", "successfully", "tactfully"
     Return: a randomly chosen adverb
     """
 
