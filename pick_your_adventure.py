@@ -75,9 +75,9 @@ def main():
         sentence7 = make_ocean_sentence(quantity, tense)
         sentence8 = make_short_ocean_sentence(quantity, tense)
 
-        print (sentence1,  sentence2,  sentence3,  sentence4)
+        print (sentence1, sentence2, sentence3, sentence4)
         print ()
-        print (sentence5,  sentence6,  sentence7,  sentence8)
+        print (sentence5, sentence6, sentence7, sentence8)
 
     elif adventure_choice == "jungle":
         tense_list = ["past", "present", "future"]
@@ -96,9 +96,9 @@ def main():
         sentence7 = make_jungle_sentence(quantity, tense)
         sentence8 = make_short_jungle_sentence(quantity, tense)
 
-        print (sentence1,  sentence2,  sentence3,  sentence4)
+        print (sentence1, sentence2, sentence3, sentence4)
         print ()
-        print (sentence5,  sentence6,  sentence7,  sentence8)   
+        print (sentence5, sentence6, sentence7, sentence8)   
 
     elif adventure_choice == "random":
         adventure = random.choice(adventures_list).lower()
@@ -135,9 +135,9 @@ def main():
             sentence7 = make_ocean_sentence(quantity, tense)
             sentence8 = make_short_ocean_sentence(quantity, tense)
 
-            print (sentence1,  sentence2,  sentence3,  sentence4)
+            print (sentence1, sentence2, sentence3, sentence4)
             print ()
-            print (sentence5,  sentence6,  sentence7,  sentence8)
+            print (sentence5, sentence6, sentence7, sentence8)
 
         elif adventure == "jungle adventure":
             print (f"Hello {char_name}! Welcome to the Random Jungle Story. Enjoy!\n")
@@ -151,9 +151,9 @@ def main():
             sentence7 = make_jungle_sentence(quantity, tense)
             sentence8 = make_short_jungle_sentence(quantity, tense)
 
-            print (sentence1,  sentence2,  sentence3,  sentence4)
+            print (sentence1, sentence2, sentence3, sentence4)
             print ()
-            print (sentence5,  sentence6,  sentence7,  sentence8)
+            print (sentence5, sentence6, sentence7, sentence8)
 
         elif adventure == "random adventure":
             print (f"Hello {char_name}! Welcome to the Completely Random Story. Enjoy!\n")
