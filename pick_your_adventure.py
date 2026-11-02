@@ -263,7 +263,7 @@ def make_space_sentence(quantity, tense):
     determiner = get_determiner(quantity).capitalize()
     noun = get_noun("space", quantity)
     verb = get_verb(quantity, tense)
-    prepositional_phrase= get_space_prepositional_phrase(quantity)
+    prepositional_phrase= get_prepositional_phrase("space", quantity)
     adjective = get_adjective()
     adverb = get_adverb()
 
@@ -283,7 +283,7 @@ def make_ocean_sentence(quantity, tense):
     determiner = get_determiner(quantity).capitalize()
     noun = get_noun("ocean", quantity)
     verb = get_verb(quantity, tense)
-    prepositional_phrase= get_ocean_prepositional_phrase(quantity)
+    prepositional_phrase= get_prepositional_phrase("ocean", quantity)
     adjective = get_adjective()
     adverb = get_adverb()
 
@@ -303,7 +303,7 @@ def make_jungle_sentence(quantity, tense):
     determiner = get_determiner(quantity).capitalize()
     noun = get_noun("jungle", quantity)
     verb = get_verb(quantity, tense)
-    prepositional_phrase= get_jungle_prepositional_phrase(quantity)
+    prepositional_phrase= get_prepositional_phrase("jungle", quantity)
     adjective = get_adjective()
     adverb = get_adverb()
 
@@ -470,64 +470,23 @@ def get_preposition():
 
     return preposition
 
-def get_space_prepositional_phrase(quantity):
+def get_prepositional_phrase(theme, quantity):
     """Build and return a prepositional phrase composed
     of three words: a preposition, a determiner, and a
     noun by calling the get_preposition, get_determiner,
     and get_noun functions.
     Parameter
+        theme: the type of adventure
         quantity: an integer that determines if the
             determiner and noun in the prepositional
             phrase returned from this function should
-            be single or pluaral.
+            be single or plural.
     Return: a prepositional phrase.
     """
 
     preposition = get_preposition()
     determiner = get_determiner(quantity)
-    noun = get_noun("space", quantity)
-
-    prepositional_phrase = f"{preposition} {determiner} {noun}"
-
-    return prepositional_phrase
-
-def get_ocean_prepositional_phrase(quantity):
-    """Build and return a prepositional phrase composed
-    of three words: a preposition, a determiner, and a
-    noun by calling the get_preposition, get_determiner,
-    and get_noun functions.
-    Parameter
-        quantity: an integer that determines if the
-            determiner and noun in the prepositional
-            phrase returned from this function should
-            be single or pluaral.
-    Return: a prepositional phrase.
-    """
-
-    preposition = get_preposition()
-    determiner = get_determiner(quantity)
-    noun = get_noun("ocean", quantity)
-
-    prepositional_phrase = f"{preposition} {determiner} {noun}"
-
-    return prepositional_phrase
-
-def get_jungle_prepositional_phrase(quantity):
-    """Build and return a prepositional phrase composed
-    of three words: a preposition, a determiner, and a
-    noun by calling the get_preposition, get_determiner,
-    and get_noun functions.
-    Parameter
-        quantity: an integer that determines if the
-            determiner and noun in the prepositional
-            phrase returned from this function should
-            be single or pluaral.
-    Return: a prepositional phrase.
-    """
-
-    preposition = get_preposition()
-    determiner = get_determiner(quantity)
-    noun = get_noun("jungle", quantity)
+    noun = get_noun(theme, quantity)
 
     prepositional_phrase = f"{preposition} {determiner} {noun}"
 
