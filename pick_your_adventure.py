@@ -17,10 +17,14 @@ def main():
     male_index = 2
 
     print ("Let's get your character's name\n")
+    name_dict = get_name_dictionary("character_name.csv", letter_index)
+
+    if not name_dict:
+        print("Can't start the game without the character names file.")
+        return
+
     gender_choice = ask_choice("Do you want a male or female character? (m/f) ", ["m", "f"])
     character_choice = ask_choice("To get your character's name pick a letter from A-Z: ", list(string.ascii_lowercase))
-
-    name_dict = get_name_dictionary("character_name.csv", letter_index)
     
     if gender_choice == "m":
         char_name = get_character_name(name_dict, male_index, character_choice)
@@ -608,8 +612,8 @@ def get_adverb():
     """
 
     adverbs = ["actively", "aggressively", "assertively", "boldly",
-        "consistently", "curiously", "eagerly", "humourously",
-        "quietly", "seriously", "succesfully", "tactfully"]
+        "consistently", "curiously", "eagerly", "humorously",
+        "quietly", "seriously", "successfully", "tactfully"]
     
     adverb = random.choice(adverbs)
     
