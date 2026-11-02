@@ -9,12 +9,34 @@ import csv
 import os
 import string
 
+NOUNS = {
+        "space": {
+            "single": ["alien", "comet", "space junk", "space dog", 
+                    "astronaut", "Rocket", "Groot", "C3PO", "R2D2"],
+            "plural": ["aliens", "comets", "rockets", "space dogs", "astronauts",
+                    "Guardians of the Galaxy", "droids", "Storm Troopers"]
+        },
+        "ocean": {
+            "single": ["great white shark", "giant squid", "sperm whale", 
+                    "pufferfish", "scuba diver", "submarine", "orca"],
+            "plural": ["great white sharks", "giant squids", "sperm whales",
+                    "pufferfish", "scuba divers", "submarines", "orcas"]
+        },
+        "jungle": {
+            "single": ["macaw", "jaguar", "mosquito", "monkey",
+                    "feral child", "jungle vine", "man eating plant"],
+            "plural": ["macaws", "jaguars", "mosquitoes", "monkeys",
+                    "feral children", "jungle vines", "man eating plants"]
+        }
+    }
+
 def main():
     print("\nWelcome to Pick Your Adventure\n")
     
     letter_index = 0
     female_index = 1
     male_index = 2
+
 
     print ("Let's get your character's name\n")
     name_dict = get_name_dictionary("character_name.csv", letter_index)
@@ -239,7 +261,7 @@ def make_space_sentence(quantity, tense):
     """
 
     determiner = get_determiner(quantity).capitalize()
-    noun = get_space_noun(quantity)
+    noun = get_noun("space", quantity)
     verb = get_verb(quantity, tense)
     prepositional_phrase= get_space_prepositional_phrase(quantity)
     adjective = get_adjective()
@@ -259,7 +281,7 @@ def make_ocean_sentence(quantity, tense):
     """
 
     determiner = get_determiner(quantity).capitalize()
-    noun = get_ocean_noun(quantity)
+    noun = get_noun("ocean", quantity)
     verb = get_verb(quantity, tense)
     prepositional_phrase= get_ocean_prepositional_phrase(quantity)
     adjective = get_adjective()
@@ -279,7 +301,7 @@ def make_jungle_sentence(quantity, tense):
     """
 
     determiner = get_determiner(quantity).capitalize()
-    noun = get_jungle_noun(quantity)
+    noun = get_noun("jungle", quantity)
     verb = get_verb(quantity, tense)
     prepositional_phrase= get_jungle_prepositional_phrase(quantity)
     adjective = get_adjective()
@@ -299,7 +321,7 @@ def make_short_space_sentence(quantity, tense):
     """
 
     determiner = get_determiner(quantity).capitalize()
-    noun = get_space_noun(quantity)
+    noun = get_noun("space", quantity)
     verb = get_verb(quantity, tense)
     adjective = get_adjective()
     adverb = get_adverb()
@@ -318,7 +340,7 @@ def make_short_ocean_sentence(quantity, tense):
     """
 
     determiner = get_determiner(quantity).capitalize()
-    noun = get_ocean_noun(quantity)
+    noun = get_noun("ocean", quantity)
     verb = get_verb(quantity, tense)
     adjective = get_adjective()
     adverb = get_adverb()
@@ -337,7 +359,7 @@ def make_short_jungle_sentence(quantity, tense):
     """
 
     determiner = get_determiner(quantity).capitalize()
-    noun = get_jungle_noun(quantity)
+    noun = get_noun("jungle", quantity)
     verb = get_verb(quantity, tense)
     adjective = get_adjective()
     adverb = get_adverb()
@@ -368,89 +390,17 @@ def get_determiner(quantity):
     word = random.choice(words)
     return word
 
-def get_space_noun(quantity):
-    """Return a randomly chosen noun.
-    If quantity is 1, this function will
-    return one of these nine single nouns:
-        "alien", "comet", "space junk", "space dog", 
-        "astronaut", "Rocket", "Groot", "C3PO", "R2D2"
-    Otherwise, this function will return one of
-    these eight plural nouns:
-        "aliens", "comets", "rockets", "space dogs", "astronauts",
-        "Guardians of the Galaxy", "droids", "Storm Troopers"
-    Parameter
-        quantity: an integer that determines if
-            the returned noun is single or plural.
-    Return: a randomly chosen noun.
-        """
-    
-    single_nouns = ["alien", "comet", "space junk", "space dog", 
-        "astronaut", "Rocket", "Groot", "C3PO", "R2D2"]
-    plural_nouns = ["aliens", "comets", "rockets", "space dogs", "astronauts",
-        "Guardians of the Galaxy", "droids", "Storm Troopers"]
-    
+def get_noun(theme, quantity):
+    """Return a randomly chosen noun for the given theme.
+    Parameters
+        theme: "space", "ocean", "jungle"
+        quantity: 1 for a single noun, anything else for plural
+    Return: a randomly chosen noun
+    """
     if quantity == 1:
-        noun = random.choice(single_nouns)
-    elif quantity != 1:
-        noun = random.choice(plural_nouns)
-
-    return noun
-    
-def get_ocean_noun(quantity):
-    """Return a randomly chosen noun.
-    If quantity is 1, this function will
-    return one of these seven single nouns:
-        "great white shark", "giant squid", "sperm whale", 
-        "pufferfish", "scuba diver", "submarine", "orca"
-    Otherwise, this function will return one of
-    these seven plural nouns:
-        "great white sharks", "giant squids", "sperm whales",
-        "pufferfish", "scuba divers", "submarines", "orcas"
-    Parameter
-        quantity: an integer that determines if
-            the returned noun is single or plural.
-    Return: a randomly chosen noun.
-        """
-    
-    single_nouns = ["great white shark", "giant squid", "sperm whale", 
-        "pufferfish", "scuba diver", "submarine", "orca"]
-    plural_nouns = ["great white sharks", "giant squids", "sperm whales",
-        "pufferfish", "scuba divers", "submarines", "orcas"]
-    
-    if quantity == 1:
-        noun = random.choice(single_nouns)
-    elif quantity != 1:
-        noun = random.choice(plural_nouns)
-
-    return noun
-
-def get_jungle_noun(quantity):
-    """Return a randomly chosen noun.
-    If quantity is 1, this function will
-    return one of these seven single nouns:
-        "macaw", "jaguar", "mosquito", "monkey",
-        "feral child", "jungle vine", "man eating plant"
-    Otherwise, this function will return one of
-    these seven plural nouns:
-        "macaws", "jaguars", "mosquitoes", "monkeys",
-        "feral children", "jungle vines", "man eating plants"
-    Parameter
-        quantity: an integer that determines if
-            the returned noun is single or plural.
-    Return: a randomly chosen noun.
-        """
-    
-    single_nouns = ["macaw", "jaguar", "mosquito", "monkey",
-        "feral child", "jungle vine", "man eating plant"]
-    plural_nouns = ["macaws", "jaguars", "mosquitoes", "monkeys",
-        "feral children", "jungle vines", "man eating plants"]
-    
-    if quantity == 1:
-        noun = random.choice(single_nouns)
-    elif quantity != 1:
-        noun = random.choice(plural_nouns)
-
-    return noun
+        return random.choice(NOUNS[theme]["single"])
+    else:
+        return random.choice(NOUNS[theme]["plural"])
     
 def get_verb(quantity, tense):
     """Return a randomly chosen verb. If tense is "past",
@@ -535,7 +485,7 @@ def get_space_prepositional_phrase(quantity):
 
     preposition = get_preposition()
     determiner = get_determiner(quantity)
-    noun = get_space_noun(quantity)
+    noun = get_noun("space", quantity)
 
     prepositional_phrase = f"{preposition} {determiner} {noun}"
 
@@ -556,7 +506,7 @@ def get_ocean_prepositional_phrase(quantity):
 
     preposition = get_preposition()
     determiner = get_determiner(quantity)
-    noun = get_ocean_noun(quantity)
+    noun = get_noun("ocean", quantity)
 
     prepositional_phrase = f"{preposition} {determiner} {noun}"
 
@@ -577,7 +527,7 @@ def get_jungle_prepositional_phrase(quantity):
 
     preposition = get_preposition()
     determiner = get_determiner(quantity)
-    noun = get_jungle_noun(quantity)
+    noun = get_noun("jungle", quantity)
 
     prepositional_phrase = f"{preposition} {determiner} {noun}"
 
