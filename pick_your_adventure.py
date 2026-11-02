@@ -7,6 +7,7 @@ functions and modules to show my range of skills
 import random
 import csv
 import os
+import string
 
 def main():
     print("\nWelcome to Pick Your Adventure\n")
@@ -16,8 +17,8 @@ def main():
     male_index = 2
 
     print ("Let's get your character's name\n")
-    gender_choice = input("Do you want a male or female character? (m/f) ").lower()
-    character_choice = input("To get your character's name pick a letter from A-Z: ").lower()
+    gender_choice = ask_choice("Do you want a male or female character? (m/f) ", ["m", "f"])
+    character_choice = ask_choice("To get your character's name pick a letter from A-Z: ", list(string.ascii_lowercase))
 
     name_dict = get_name_dictionary("character_name.csv", letter_index)
     
@@ -34,7 +35,7 @@ def main():
     for adventure in adventures_list:
         print (adventure)
         
-    adventure_choice = input("Which adventure do you choose? (space/ocean/jungle/random) ").lower()
+    adventure_choice = ask_choice("Which adventure do you choose? (space/ocean/jungle/random) ", ["space", "ocean", "jungle", "random"])
     
     if adventure_choice == "space":
 
@@ -171,6 +172,21 @@ def main():
             print (sentence1, sentence2, sentence3, sentence4)
             print ()
             print (sentence5, sentence6, sentence7, sentence8, sentence9)         
+
+def ask_choice(prompt, valid_answers):
+    """Ask the player a question until they give a valid answer.
+    Parameters
+        prompt: the question to show the player
+        valid_answers: a list of acceptable answers
+    Return: the player's answer in lowercase
+    """
+    while True:
+        answer = input(prompt).strip().lower()
+
+        if answer in valid_answers:
+            return answer
+
+        print(f"Please choose one of: {', '.join(valid_answers)}")
 
 def get_name_dictionary(filename, key_column_index):
     """Read the contents of a CSV file into a compound dictionary"""
