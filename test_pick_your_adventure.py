@@ -30,7 +30,7 @@ def test_get_name_dictionary():
     assert len(names) == 26
     assert names["C"] == ["C", "Coco Carroway", "Caleb Caldwell"]
 
-def test_get_name_dictionary():
+def test_get_name_dictionary_missing_file():
     """Tests that get_name_dictionary returns an empty dictionary when
     the file does not exist."""
     assert get_name_dictionary("no_such_file.csv", 0) == {}
