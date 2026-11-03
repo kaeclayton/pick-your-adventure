@@ -72,14 +72,14 @@ def main():
 
         print (f"Hello {char_name}! Welcome to the Random Space Story. Enjoy!\n")
             
-        sentence1 = make_space_sentence(quantity, tense)
-        sentence2 = make_short_space_sentence(quantity, tense)
-        sentence3 = make_short_space_sentence(quantity, tense)
-        sentence4 = make_space_sentence(quantity, tense)
-        sentence5 = make_short_space_sentence(quantity, tense)
-        sentence6 = make_space_sentence(quantity, tense)
-        sentence7 = make_space_sentence(quantity, tense)
-        sentence8 = make_short_space_sentence(quantity, tense)
+        sentence1 = make_sentence("space", quantity, tense)
+        sentence2 = make_sentence("space", quantity, tense, with_phrase=False)
+        sentence3 = make_sentence("space", quantity, tense, with_phrase=False)
+        sentence4 = make_sentence("space", quantity, tense)
+        sentence5 = make_sentence("space", quantity, tense, with_phrase=False)
+        sentence6 = make_sentence("space", quantity, tense)
+        sentence7 = make_sentence("space", quantity, tense)
+        sentence8 = make_sentence("space", quantity, tense, with_phrase=False)
 
         print (sentence1, sentence2, sentence3, sentence4)
         print ()
@@ -93,14 +93,14 @@ def main():
 
         print (f"Hello {char_name}! Welcome to the Random Ocean Story. Enjoy!\n")
             
-        sentence1 = make_ocean_sentence(quantity, tense)
-        sentence2 = make_short_ocean_sentence(quantity, tense)
-        sentence3 = make_short_ocean_sentence(quantity, tense)
-        sentence4 = make_ocean_sentence(quantity, tense)
-        sentence5 = make_short_ocean_sentence(quantity, tense)
-        sentence6 = make_ocean_sentence(quantity, tense)
-        sentence7 = make_ocean_sentence(quantity, tense)
-        sentence8 = make_short_ocean_sentence(quantity, tense)
+        sentence1 = make_sentence("ocean", quantity, tense)
+        sentence2 = make_sentence("ocean", quantity, tense, with_phrase=False)
+        sentence3 = make_sentence("ocean", quantity, tense, with_phrase=False)
+        sentence4 = make_sentence("ocean", quantity, tense)
+        sentence5 = make_sentence("ocean", quantity, tense, with_phrase=False)
+        sentence6 = make_sentence("ocean", quantity, tense)
+        sentence7 = make_sentence("ocean", quantity, tense)
+        sentence8 = make_sentence("ocean", quantity, tense, with_phrase=False)
 
         print (sentence1, sentence2, sentence3, sentence4)
         print ()
@@ -114,14 +114,14 @@ def main():
 
         print (f"Hello {char_name}! Welcome to the Random Jungle Story. Enjoy!\n")
             
-        sentence1 = make_jungle_sentence(quantity, tense)
-        sentence2 = make_short_jungle_sentence(quantity, tense)
-        sentence3 = make_short_jungle_sentence(quantity, tense)
-        sentence4 = make_jungle_sentence(quantity, tense)
-        sentence5 = make_short_jungle_sentence(quantity, tense)
-        sentence6 = make_jungle_sentence(quantity, tense)
-        sentence7 = make_jungle_sentence(quantity, tense)
-        sentence8 = make_short_jungle_sentence(quantity, tense)
+        sentence1 = make_sentence("jungle", quantity, tense)
+        sentence2 = make_sentence("jungle", quantity, tense, with_phrase=False)
+        sentence3 = make_sentence("jungle", quantity, tense, with_phrase=False)
+        sentence4 = make_sentence("jungle", quantity, tense)
+        sentence5 = make_sentence("jungle", quantity, tense, with_phrase=False)
+        sentence6 = make_sentence("jungle", quantity, tense)
+        sentence7 = make_sentence("jungle", quantity, tense)
+        sentence8 = make_sentence("jungle", quantity, tense, with_phrase=False)
 
         print (sentence1, sentence2, sentence3, sentence4)
         print ()
@@ -137,14 +137,14 @@ def main():
         if adventure == "space adventure":
             print (f"Hello {char_name}! Welcome to the Random Space Story. Enjoy!\n")
             
-            sentence1 = make_space_sentence(quantity, tense)
-            sentence2 = make_short_space_sentence(quantity, tense)
-            sentence3 = make_short_space_sentence(quantity, tense)
-            sentence4 = make_space_sentence(quantity, tense)
-            sentence5 = make_short_space_sentence(quantity, tense)
-            sentence6 = make_space_sentence(quantity, tense)
-            sentence7 = make_space_sentence(quantity, tense)
-            sentence8 = make_short_space_sentence(quantity, tense)
+            sentence1 = make_sentence("space", quantity, tense)
+            sentence2 = make_sentence("space", quantity, tense, with_phrase=False)
+            sentence3 = make_sentence("space", quantity, tense, with_phrase=False)
+            sentence4 = make_sentence("space", quantity, tense)
+            sentence5 = make_sentence("space", quantity, tense, with_phrase=False)
+            sentence6 = make_sentence("space", quantity, tense)
+            sentence7 = make_sentence("space", quantity, tense)
+            sentence8 = make_sentence("space", quantity, tense, with_phrase=False)
 
             print (sentence1, sentence2, sentence3, sentence4)
             print ()
@@ -153,14 +153,14 @@ def main():
         elif adventure == "ocean adventure":
             print (f"Hello {char_name}! Welcome to the Random Ocean Story. Enjoy!\n")
             
-            sentence1 = make_ocean_sentence(quantity, tense)
-            sentence2 = make_short_ocean_sentence(quantity, tense)
-            sentence3 = make_short_ocean_sentence(quantity, tense)
-            sentence4 = make_ocean_sentence(quantity, tense)
-            sentence5 = make_short_ocean_sentence(quantity, tense)
-            sentence6 = make_ocean_sentence(quantity, tense)
-            sentence7 = make_ocean_sentence(quantity, tense)
-            sentence8 = make_short_ocean_sentence(quantity, tense)
+            sentence1 = make_sentence("ocean", quantity, tense)
+            sentence2 = make_sentence("ocean", quantity, tense, with_phrase=False)
+            sentence3 = make_sentence("ocean", quantity, tense, with_phrase=False)
+            sentence4 = make_sentence("ocean", quantity, tense)
+            sentence5 = make_sentence("ocean", quantity, tense, with_phrase=False)
+            sentence6 = make_sentence("ocean", quantity, tense)
+            sentence7 = make_sentence("ocean", quantity, tense)
+            sentence8 = make_sentence("ocean", quantity, tense, with_phrase=False)
 
             print (sentence1, sentence2, sentence3, sentence4)
             print ()
@@ -169,14 +169,14 @@ def main():
         elif adventure == "jungle adventure":
             print (f"Hello {char_name}! Welcome to the Random Jungle Story. Enjoy!\n")
             
-            sentence1 = make_jungle_sentence(quantity, tense)
-            sentence2 = make_short_jungle_sentence(quantity, tense)
-            sentence3 = make_short_jungle_sentence(quantity, tense)
-            sentence4 = make_jungle_sentence(quantity, tense)
-            sentence5 = make_short_jungle_sentence(quantity, tense)
-            sentence6 = make_jungle_sentence(quantity, tense)
-            sentence7 = make_jungle_sentence(quantity, tense)
-            sentence8 = make_short_jungle_sentence(quantity, tense)
+            sentence1 = make_sentence("jungle", quantity, tense)
+            sentence2 = make_sentence("jungle", quantity, tense, with_phrase=False)
+            sentence3 = make_sentence("jungle", quantity, tense, with_phrase=False)
+            sentence4 = make_sentence("jungle", quantity, tense)
+            sentence5 = make_sentence("jungle", quantity, tense, with_phrase=False)
+            sentence6 = make_sentence("jungle", quantity, tense)
+            sentence7 = make_sentence("jungle", quantity, tense)
+            sentence8 = make_sentence("jungle", quantity, tense, with_phrase=False)
 
             print (sentence1, sentence2, sentence3, sentence4)
             print ()
@@ -185,15 +185,15 @@ def main():
         elif adventure == "random adventure":
             print (f"Hello {char_name}! Welcome to the Completely Random Story. Enjoy!\n")
             
-            sentence1 = make_jungle_sentence(quantity, tense)
-            sentence2 = make_short_space_sentence(quantity, tense)
-            sentence3 = make_short_ocean_sentence(quantity, tense)
-            sentence4 = make_space_sentence(quantity, tense)
-            sentence5 = make_short_jungle_sentence(quantity, tense)
-            sentence6 = make_ocean_sentence(quantity, tense)
-            sentence7 = make_jungle_sentence(quantity, tense)
-            sentence8 = make_short_space_sentence(quantity, tense)
-            sentence9 = make_ocean_sentence(quantity, tense)
+            sentence1 = make_sentence("jungle", quantity, tense)
+            sentence2 = make_sentence("space", quantity, tense, with_phrase=False)
+            sentence3 = make_sentence("ocean", quantity, tense, with_phrase=False)
+            sentence4 = make_sentence("space", quantity, tense)
+            sentence5 = make_sentence("jungle", quantity, tense, with_phrase=False)
+            sentence6 = make_sentence("ocean", quantity, tense)
+            sentence7 = make_sentence("jungle", quantity, tense)
+            sentence8 = make_sentence("space", quantity, tense, with_phrase=False)
+            sentence9 = make_sentence("ocean", quantity, tense)
 
             print (sentence1, sentence2, sentence3, sentence4)
             print ()
@@ -236,14 +236,19 @@ def get_name_dictionary(filename, key_column_index):
 
 
 def get_character_name(dictionary, index, letter):
-    """Recieves a dictionary with which to find the name from a given letter
-    at a specific index in that dictionary and returns the name
+    """Find a character name in the name dictionary
     Parameters:
-    dictionary: the dictionary that stores character names as a value and the
-    alphabet letter is the key
-    Return: The character name"""
+        dictionary: the dictionary that stores character names as a value and the
+            alphabet letter as the key
+        index: the position of the name in that letter's row, 
+            1 for the female name or 2 for the male name
+        letter: the letter the player chose, in either case; 
+            it is changed to uppercase to match the dictionary keys
+    Return: The character name
+    """
 
     letter = letter.upper()
+    character_name = "Alex Adventurer"
 
     if letter in dictionary:
         character_name_list = dictionary[letter]
@@ -251,122 +256,29 @@ def get_character_name(dictionary, index, letter):
 
     return character_name    
 
-def make_space_sentence(quantity, tense):
-    """Build and return a sentence with three words:
-    a determiner, a noun, and a verb. The grammatical
-    quantity of the determiner and noun will match the
-    number in the quantity parameter. The grammatical
-    quantity and tense of the verb will match the number
-    and tense in the quantity and tense parameters.
+def make_sentence(theme, quantity, tense, with_phrase=True):
+    """Build and return a sentence, either short or long:
+    the short sentence will have a determiner, an adjective, a noun, an adverb, and a verb. The long sentence will add a prepositional phrase.  The grammatical quantity of the determiner and noun will match the number in the quantity parameter. The grammatical quantity and tense of the verb will match the number and tense in the quantity and tense parameters.
+    Parameters:
+        theme: the type of adventure for the sentence
+        quantity: an integer (to determine single or plural nouns)
+        tense: past, present, or future verb tense
+        with_phrase: a Boolean to determine if there is a prepositional phrase added
     """
 
     determiner = get_determiner(quantity).capitalize()
-    noun = get_noun("space", quantity)
-    verb = get_verb(quantity, tense)
-    prepositional_phrase= get_prepositional_phrase("space", quantity)
-    adjective = get_adjective()
-    adverb = get_adverb()
-
-    sentence = f"{determiner} {adjective} {noun} {adverb} {verb} {prepositional_phrase}."
-
-    return sentence
-
-def make_ocean_sentence(quantity, tense):
-    """Build and return a sentence with three words:
-    a determiner, a noun, and a verb. The grammatical
-    quantity of the determiner and noun will match the
-    number in the quantity parameter. The grammatical
-    quantity and tense of the verb will match the number
-    and tense in the quantity and tense parameters.
-    """
-
-    determiner = get_determiner(quantity).capitalize()
-    noun = get_noun("ocean", quantity)
-    verb = get_verb(quantity, tense)
-    prepositional_phrase= get_prepositional_phrase("ocean", quantity)
-    adjective = get_adjective()
-    adverb = get_adverb()
-
-    sentence = f"{determiner} {adjective} {noun} {adverb} {verb} {prepositional_phrase}."
-
-    return sentence
-
-def make_jungle_sentence(quantity, tense):
-    """Build and return a sentence with three words:
-    a determiner, a noun, and a verb. The grammatical
-    quantity of the determiner and noun will match the
-    number in the quantity parameter. The grammatical
-    quantity and tense of the verb will match the number
-    and tense in the quantity and tense parameters.
-    """
-
-    determiner = get_determiner(quantity).capitalize()
-    noun = get_noun("jungle", quantity)
-    verb = get_verb(quantity, tense)
-    prepositional_phrase= get_prepositional_phrase("jungle", quantity)
-    adjective = get_adjective()
-    adverb = get_adverb()
-
-    sentence = f"{determiner} {adjective} {noun} {adverb} {verb} {prepositional_phrase}."
-
-    return sentence
-
-def make_short_space_sentence(quantity, tense):
-    """Build and return a sentence with three words:
-    a determiner, a noun, and a verb. The grammatical
-    quantity of the determiner and noun will match the
-    number in the quantity parameter. The grammatical
-    quantity and tense of the verb will match the number
-    and tense in the quantity and tense parameters.
-    """
-
-    determiner = get_determiner(quantity).capitalize()
-    noun = get_noun("space", quantity)
+    noun = get_noun(theme, quantity)
     verb = get_verb(quantity, tense)
     adjective = get_adjective()
     adverb = get_adverb()
 
     sentence = f"{determiner} {adjective} {noun} {adverb} {verb}."
 
-    return sentence
+    if with_phrase:
+        prepositional_phrase= get_prepositional_phrase(theme, quantity)
+        sentence += f" {prepositional_phrase}"
 
-def make_short_ocean_sentence(quantity, tense):
-    """Build and return a sentence with three words:
-    a determiner, a noun, and a verb. The grammatical
-    quantity of the determiner and noun will match the
-    number in the quantity parameter. The grammatical
-    quantity and tense of the verb will match the number
-    and tense in the quantity and tense parameters.
-    """
-
-    determiner = get_determiner(quantity).capitalize()
-    noun = get_noun("ocean", quantity)
-    verb = get_verb(quantity, tense)
-    adjective = get_adjective()
-    adverb = get_adverb()
-
-    sentence = f"{determiner} {adjective} {noun} {adverb} {verb}."
-
-    return sentence
-
-def make_short_jungle_sentence(quantity, tense):
-    """Build and return a sentence with three words:
-    a determiner, a noun, and a verb. The grammatical
-    quantity of the determiner and noun will match the
-    number in the quantity parameter. The grammatical
-    quantity and tense of the verb will match the number
-    and tense in the quantity and tense parameters.
-    """
-
-    determiner = get_determiner(quantity).capitalize()
-    noun = get_noun("jungle", quantity)
-    verb = get_verb(quantity, tense)
-    adjective = get_adjective()
-    adverb = get_adverb()
-
-    sentence = f"{determiner} {adjective} {noun} {adverb} {verb}."
-
-    return sentence
+    return sentence + "."
 
 def get_determiner(quantity):
     """Return a randomly chosen determiner. A determiner is
