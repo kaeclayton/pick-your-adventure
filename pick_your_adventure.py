@@ -258,7 +258,11 @@ def get_character_name(dictionary, index, letter):
 
 def make_sentence(theme, quantity, tense, with_phrase=True):
     """Build and return a sentence, either short or long:
-    the short sentence will have a determiner, an adjective, a noun, an adverb, and a verb. The long sentence will add a prepositional phrase.  The grammatical quantity of the determiner and noun will match the number in the quantity parameter. The grammatical quantity and tense of the verb will match the number and tense in the quantity and tense parameters.
+    the short sentence will have a determiner, an adjective, a noun, an adverb, and a
+    verb. The long sentence will add a prepositional phrase.  The grammatical quantity 
+    of the determiner and noun will match the number in the quantity parameter. The 
+    grammatical quantity and tense of the verb will match the number and tense in the 
+    quantity and tense parameters.
     Parameters:
         theme: the type of adventure for the sentence
         quantity: an integer (to determine single or plural nouns)
@@ -272,7 +276,7 @@ def make_sentence(theme, quantity, tense, with_phrase=True):
     adjective = get_adjective()
     adverb = get_adverb()
 
-    sentence = f"{determiner} {adjective} {noun} {adverb} {verb}."
+    sentence = f"{determiner} {adjective} {noun} {adverb} {verb}"
 
     if with_phrase:
         prepositional_phrase= get_prepositional_phrase(theme, quantity)
