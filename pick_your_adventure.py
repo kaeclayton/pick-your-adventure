@@ -37,7 +37,6 @@ def main():
     female_index = 1
     male_index = 2
 
-
     print ("Let's get your character's name\n")
     name_dict = get_name_dictionary("character_name.csv", letter_index)
 
@@ -82,7 +81,7 @@ def main():
         themes = [adventure_choice]
 
     print(f"Hello {char_name}! Welcome to the {story_titles[adventure_choice]}. Enjoy!\n")
-    tell_story(themes, quantity, tense)                                            
+    tell_story(themes, quantity, tense)
 
 def ask_choice(prompt, valid_answers):
     """Ask the player a question until they give a valid answer.
@@ -330,7 +329,7 @@ def get_adverb():
     return adverb
 
 def tell_story(themes, quantity, tense):
-    """Build a story from randomly created sentences and prints it
+    """Build a story from randomly created sentences and print it
     Parameters:
         themes: a list of themes; each sentence uses a random theme from it, so one theme
             makes a themed story and several make a mixed one.
