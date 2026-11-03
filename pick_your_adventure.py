@@ -1,6 +1,6 @@
 """
 Author: Kae Clayton
-Purpose: Create and adventure game using multiple
+Purpose: Create an adventure game using multiple
 functions and modules to show my range of skills
 """
 
@@ -11,13 +11,13 @@ import string
 
 NOUNS = {
         "space": {
-            "single": ["alien", "comet", "space junk", "space dog", 
+            "single": ["alien", "comet", "space junk", "space dog",
                     "astronaut", "Rocket", "Groot", "C3PO", "R2D2"],
             "plural": ["aliens", "comets", "rockets", "space dogs", "astronauts",
                     "Guardians of the Galaxy", "droids", "Storm Troopers"]
         },
         "ocean": {
-            "single": ["great white shark", "giant squid", "sperm whale", 
+            "single": ["great white shark", "giant squid", "sperm whale",
                     "pufferfish", "scuba diver", "submarine", "orca"],
             "plural": ["great white sharks", "giant squids", "sperm whales",
                     "pufferfish", "scuba divers", "submarines", "orcas"]
@@ -31,8 +31,9 @@ NOUNS = {
     }
 
 def main():
+    """Run the game: choose a character, then play adventures until the player quits"""
     print("\nWelcome to Pick Your Adventure\n")
-    
+
     letter_index = 0
 
     print ("Let's get your character's name\n")
@@ -40,7 +41,7 @@ def main():
 
     if not name_dict:
         print("Can't start the game without the character names file.")
-        return    
+        return
 
     char_name = choose_character(name_dict)
 
@@ -67,9 +68,9 @@ def play_adventure(char_name):
     print ("Available adventures are:")
     for adventure in adventures_list:
         print (adventure)
-        
+
     adventure_choice = ask_choice("Which adventure do you choose? (space/ocean/jungle/random) ", ["space", "ocean", "jungle", "random"])
-    
+
     tense = random.choice(["past", "present", "future"])
     quantity = random.choice([1, 2, 3, 4, 5])
 
@@ -102,12 +103,12 @@ def choose_character(name_dict):
 
     gender_choice = ask_choice("Do you want a male or female character? (m/f) ", ["m", "f"])
     character_choice = ask_choice("To get your character's name pick a letter from A-Z: ", list(string.ascii_lowercase))
-        
+
     if gender_choice == "m":
             char_name = get_character_name(name_dict, male_index, character_choice)
     else:
         char_name = get_character_name(name_dict, female_index, character_choice)
-    
+
     print (f"Your name is {char_name}.\n")
     return char_name
 
@@ -129,21 +130,21 @@ def ask_choice(prompt, valid_answers):
 def get_name_dictionary(filename, key_column_index):
     """Read the contents of a CSV file into a compound dictionary"""
     dictionary = {}
-    
+
     try:
         with open(filename, mode='r', encoding='utf-8') as csv_file:
             reader = csv.reader(csv_file)
             next(reader)  # Skip header row
-            
+
             for row in reader:
                 if len(row) >= 3:  # Ensure we have enough columns
                     key = row[key_column_index].strip().upper()
                     dictionary[key] = row
-            
+
     except FileNotFoundError:
         print(f"ERROR: File '{filename}' not found in: {os.getcwd()}")
         return {}
-    
+
     return dictionary
 
 def get_character_name(dictionary, index, letter):
@@ -151,9 +152,9 @@ def get_character_name(dictionary, index, letter):
     Parameters:
         dictionary: the dictionary that stores character names as a value and the
             alphabet letter as the key
-        index: the position of the name in that letter's row, 
+        index: the position of the name in that letter's row,
             1 for the female name or 2 for the male name
-        letter: the letter the player chose, in either case; 
+        letter: the letter the player chose, in either case;
             it is changed to uppercase to match the dictionary keys
     Return: The character name
     """
@@ -165,14 +166,14 @@ def get_character_name(dictionary, index, letter):
         character_name_list = dictionary[letter]
         character_name = character_name_list[index]
 
-    return character_name    
+    return character_name
 
 def make_sentence(theme, quantity, tense, with_phrase=True):
     """Build and return a sentence, either short or long:
     the short sentence will have a determiner, an adjective, a noun, an adverb, and a
-    verb. The long sentence will add a prepositional phrase.  The grammatical quantity 
-    of the determiner and noun will match the number in the quantity parameter. The 
-    grammatical quantity and tense of the verb will match the number and tense in the 
+    verb. The long sentence will add a prepositional phrase.  The grammatical quantity
+    of the determiner and noun will match the number in the quantity parameter. The
+    grammatical quantity and tense of the verb will match the number and tense in the
     quantity and tense parameters.
     Parameters:
         theme: the type of adventure for the sentence
@@ -228,7 +229,7 @@ def get_noun(theme, quantity):
         return random.choice(NOUNS[theme]["single"])
     else:
         return random.choice(NOUNS[theme]["plural"])
-    
+
 def get_verb(quantity, tense):
     """Return a randomly chosen verb. If tense is "past",
     this function will return one of these ten verbs:
@@ -245,7 +246,7 @@ def get_verb(quantity, tense):
     If tense is "future", this function will return one of
     these ten verbs:
         "will growl", "will run", "will chuckle", "will balk",
-        "will cough", "will sing", "will break", "will fight", 
+        "will cough", "will sing", "will break", "will fight",
         "will believe", "will need"
     Parameters
         quantity: an integer that determines if the
@@ -254,7 +255,7 @@ def get_verb(quantity, tense):
             either "past", "present" or "future".
     Return: a randomly chosen verb.
     """
-    
+
     past_tense_verbs = ["growled", "ran", "chuckled", "balked", "coughed",
         "sang", "broke", "fought", "believed", "needed"]
     present_single_verbs = ["growls", "runs", "chuckles", "balks", "coughs",
@@ -262,9 +263,9 @@ def get_verb(quantity, tense):
     present_plural_verbs = ["growl", "run", "chuckle", "balk", "cough",
         "sing", "break", "fight", "believe", "need"]
     future_tense_verbs = ["will growl", "will run", "will chuckle", "will balk",
-        "will cough", "will sing", "will break", "will fight", 
+        "will cough", "will sing", "will break", "will fight",
         "will believe", "will need"]
-    
+
     if tense == "past":
         verb = random.choice(past_tense_verbs)
     elif tense == "present" and quantity == 1:
@@ -272,27 +273,27 @@ def get_verb(quantity, tense):
     elif tense == "present" and quantity != 1:
         verb = random.choice(present_plural_verbs)
     elif tense == "future":
-        verb = random.choice(future_tense_verbs)        
-    
+        verb = random.choice(future_tense_verbs)
+
     return verb
-    
+
 def get_preposition():
     """Return a randomly chosen preposition
     from this list of prepositions:
         "about", "above", "across", "after", "along",
         "around", "at", "before", "behind", "below",
-        "beyond", "by", "for","from", "in", "into", 
-        "near", "of","off", "on", "onto", "out", 
+        "beyond", "by", "for","from", "in", "into",
+        "near", "of","off", "on", "onto", "out",
         "over", "to", "under", "with"
     Return: a randomly chosen preposition.
     """
 
     prepositions = ["about", "above", "across", "after", "along",
         "around", "at", "before", "behind", "below",
-        "beyond", "by", "for","from", "in", "into", 
-        "near", "of","off", "on", "onto", "out", 
+        "beyond", "by", "for","from", "in", "into",
+        "near", "of","off", "on", "onto", "out",
         "over", "to", "under", "with"]
-    
+
     preposition = random.choice(prepositions)
 
     return preposition
@@ -333,7 +334,7 @@ def get_adjective():
         "confident", "easygoing", "helpful", "kind", "likeable",
         "polite", "quiet", "strong", "tenacious", "lazy",
         "scary", "fierce", "grumpy", "immense", "miniature"]
-    
+
     adjective = random.choice(adjectives)
 
     return adjective
@@ -350,9 +351,9 @@ def get_adverb():
     adverbs = ["actively", "aggressively", "assertively", "boldly",
         "consistently", "curiously", "eagerly", "humorously",
         "quietly", "seriously", "successfully", "tactfully"]
-    
+
     adverb = random.choice(adverbs)
-    
+
     return adverb
 
 def tell_story(themes, quantity, tense):
@@ -383,4 +384,4 @@ def tell_story(themes, quantity, tense):
     print()
 
 if __name__ == "__main__":
-    main()  
+    main()
