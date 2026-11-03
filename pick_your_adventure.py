@@ -108,8 +108,8 @@ def choose_character(name_dict):
     else:
         char_name = get_character_name(name_dict, female_index, character_choice)
     
-        print (f"Your name is {char_name}.\n")
-        return char_name
+    print (f"Your name is {char_name}.\n")
+    return char_name
 
 def ask_choice(prompt, valid_answers):
     """Ask the player a question until they give a valid answer.
@@ -145,7 +145,6 @@ def get_name_dictionary(filename, key_column_index):
         return {}
     
     return dictionary
-
 
 def get_character_name(dictionary, index, letter):
     """Find a character name in the name dictionary
