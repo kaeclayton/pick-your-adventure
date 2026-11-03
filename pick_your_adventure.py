@@ -63,141 +63,26 @@ def main():
         
     adventure_choice = ask_choice("Which adventure do you choose? (space/ocean/jungle/random) ", ["space", "ocean", "jungle", "random"])
     
-    if adventure_choice == "space":
+    tense = random.choice(["past", "present", "future"])
+    quantity = random.choice([1, 2, 3, 4, 5])
 
-        tense_list = ["past", "present", "future"]
-        quantity_list = [1, 2, 3, 4, 5]
-        tense = random.choice(tense_list)
-        quantity = random.choice(quantity_list)
+    if adventure_choice == "random":
+        adventure_choice = random.choice(["space", "ocean", "jungle", "mixed"])
 
-        print (f"Hello {char_name}! Welcome to the Random Space Story. Enjoy!\n")
-            
-        sentence1 = make_sentence("space", quantity, tense)
-        sentence2 = make_sentence("space", quantity, tense, with_phrase=False)
-        sentence3 = make_sentence("space", quantity, tense, with_phrase=False)
-        sentence4 = make_sentence("space", quantity, tense)
-        sentence5 = make_sentence("space", quantity, tense, with_phrase=False)
-        sentence6 = make_sentence("space", quantity, tense)
-        sentence7 = make_sentence("space", quantity, tense)
-        sentence8 = make_sentence("space", quantity, tense, with_phrase=False)
+    story_titles = {
+        "space": "Random Space Story",
+        "ocean": "Random Ocean Story",
+        "jungle": "Random Jungle Story",
+        "mixed": "Completely Random Story"
+    }
 
-        print (sentence1, sentence2, sentence3, sentence4)
-        print ()
-        print (sentence5, sentence6, sentence7, sentence8)
+    if adventure_choice == "mixed":
+        themes = ["space", "ocean", "jungle"]
+    else:
+        themes = [adventure_choice]
 
-    elif adventure_choice == "ocean":
-        tense_list = ["past", "present", "future"]
-        quantity_list = [1, 2, 3, 4, 5]
-        tense = random.choice(tense_list)
-        quantity = random.choice(quantity_list)
-
-        print (f"Hello {char_name}! Welcome to the Random Ocean Story. Enjoy!\n")
-            
-        sentence1 = make_sentence("ocean", quantity, tense)
-        sentence2 = make_sentence("ocean", quantity, tense, with_phrase=False)
-        sentence3 = make_sentence("ocean", quantity, tense, with_phrase=False)
-        sentence4 = make_sentence("ocean", quantity, tense)
-        sentence5 = make_sentence("ocean", quantity, tense, with_phrase=False)
-        sentence6 = make_sentence("ocean", quantity, tense)
-        sentence7 = make_sentence("ocean", quantity, tense)
-        sentence8 = make_sentence("ocean", quantity, tense, with_phrase=False)
-
-        print (sentence1, sentence2, sentence3, sentence4)
-        print ()
-        print (sentence5, sentence6, sentence7, sentence8)
-
-    elif adventure_choice == "jungle":
-        tense_list = ["past", "present", "future"]
-        quantity_list = [1, 2, 3, 4, 5]
-        tense = random.choice(tense_list)
-        quantity = random.choice(quantity_list)
-
-        print (f"Hello {char_name}! Welcome to the Random Jungle Story. Enjoy!\n")
-            
-        sentence1 = make_sentence("jungle", quantity, tense)
-        sentence2 = make_sentence("jungle", quantity, tense, with_phrase=False)
-        sentence3 = make_sentence("jungle", quantity, tense, with_phrase=False)
-        sentence4 = make_sentence("jungle", quantity, tense)
-        sentence5 = make_sentence("jungle", quantity, tense, with_phrase=False)
-        sentence6 = make_sentence("jungle", quantity, tense)
-        sentence7 = make_sentence("jungle", quantity, tense)
-        sentence8 = make_sentence("jungle", quantity, tense, with_phrase=False)
-
-        print (sentence1, sentence2, sentence3, sentence4)
-        print ()
-        print (sentence5, sentence6, sentence7, sentence8)   
-
-    elif adventure_choice == "random":
-        adventure = random.choice(adventures_list).lower()
-        tense_list = ["past", "present", "future"]
-        quantity_list = [1, 2, 3, 4, 5]
-        tense = random.choice(tense_list)
-        quantity = random.choice(quantity_list)
-
-        if adventure == "space adventure":
-            print (f"Hello {char_name}! Welcome to the Random Space Story. Enjoy!\n")
-            
-            sentence1 = make_sentence("space", quantity, tense)
-            sentence2 = make_sentence("space", quantity, tense, with_phrase=False)
-            sentence3 = make_sentence("space", quantity, tense, with_phrase=False)
-            sentence4 = make_sentence("space", quantity, tense)
-            sentence5 = make_sentence("space", quantity, tense, with_phrase=False)
-            sentence6 = make_sentence("space", quantity, tense)
-            sentence7 = make_sentence("space", quantity, tense)
-            sentence8 = make_sentence("space", quantity, tense, with_phrase=False)
-
-            print (sentence1, sentence2, sentence3, sentence4)
-            print ()
-            print (sentence5, sentence6, sentence7, sentence8)
-
-        elif adventure == "ocean adventure":
-            print (f"Hello {char_name}! Welcome to the Random Ocean Story. Enjoy!\n")
-            
-            sentence1 = make_sentence("ocean", quantity, tense)
-            sentence2 = make_sentence("ocean", quantity, tense, with_phrase=False)
-            sentence3 = make_sentence("ocean", quantity, tense, with_phrase=False)
-            sentence4 = make_sentence("ocean", quantity, tense)
-            sentence5 = make_sentence("ocean", quantity, tense, with_phrase=False)
-            sentence6 = make_sentence("ocean", quantity, tense)
-            sentence7 = make_sentence("ocean", quantity, tense)
-            sentence8 = make_sentence("ocean", quantity, tense, with_phrase=False)
-
-            print (sentence1, sentence2, sentence3, sentence4)
-            print ()
-            print (sentence5, sentence6, sentence7, sentence8)
-
-        elif adventure == "jungle adventure":
-            print (f"Hello {char_name}! Welcome to the Random Jungle Story. Enjoy!\n")
-            
-            sentence1 = make_sentence("jungle", quantity, tense)
-            sentence2 = make_sentence("jungle", quantity, tense, with_phrase=False)
-            sentence3 = make_sentence("jungle", quantity, tense, with_phrase=False)
-            sentence4 = make_sentence("jungle", quantity, tense)
-            sentence5 = make_sentence("jungle", quantity, tense, with_phrase=False)
-            sentence6 = make_sentence("jungle", quantity, tense)
-            sentence7 = make_sentence("jungle", quantity, tense)
-            sentence8 = make_sentence("jungle", quantity, tense, with_phrase=False)
-
-            print (sentence1, sentence2, sentence3, sentence4)
-            print ()
-            print (sentence5, sentence6, sentence7, sentence8)
-
-        elif adventure == "random adventure":
-            print (f"Hello {char_name}! Welcome to the Completely Random Story. Enjoy!\n")
-            
-            sentence1 = make_sentence("jungle", quantity, tense)
-            sentence2 = make_sentence("space", quantity, tense, with_phrase=False)
-            sentence3 = make_sentence("ocean", quantity, tense, with_phrase=False)
-            sentence4 = make_sentence("space", quantity, tense)
-            sentence5 = make_sentence("jungle", quantity, tense, with_phrase=False)
-            sentence6 = make_sentence("ocean", quantity, tense)
-            sentence7 = make_sentence("jungle", quantity, tense)
-            sentence8 = make_sentence("space", quantity, tense, with_phrase=False)
-            sentence9 = make_sentence("ocean", quantity, tense)
-
-            print (sentence1, sentence2, sentence3, sentence4)
-            print ()
-            print (sentence5, sentence6, sentence7, sentence8, sentence9)         
+    print(f"Hello {char_name}! Welcome to the {story_titles[adventure_choice]}. Enjoy!\n")
+    tell_story(themes, quantity, tense)                                            
 
 def ask_choice(prompt, valid_answers):
     """Ask the player a question until they give a valid answer.
@@ -444,6 +329,32 @@ def get_adverb():
     
     return adverb
 
+def tell_story(themes, quantity, tense):
+    """Build a story from randomly created sentences and prints it
+    Parameters:
+        themes: a list of themes; each sentence uses a random theme from it, so one theme
+            makes a themed story and several make a mixed one.
+        quantity: an integer
+            a 1 indicates a singular noun, any other integer creates a plural noun
+        tense:  the type of tense of the verbs in the sentence, past, present or future
+    Return: nothing
+    """
+
+    first_paragraph = []
+    second_paragraph = []
+
+    for with_phrase in [True, False, False, True]:
+        theme = random.choice(themes)
+        first_paragraph.append(make_sentence(theme, quantity, tense, with_phrase=with_phrase))
+
+    for with_phrase in [False, True, True, False]:
+        theme = random.choice(themes)
+        second_paragraph.append(make_sentence(theme, quantity, tense, with_phrase=with_phrase))
+
+    print(" ".join(first_paragraph))
+    print()
+    print(" ".join(second_paragraph))
+    print()
 
 if __name__ == "__main__":
     main()  
