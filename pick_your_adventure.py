@@ -34,26 +34,34 @@ def main():
     print("\nWelcome to Pick Your Adventure\n")
     
     letter_index = 0
-    female_index = 1
-    male_index = 2
 
     print ("Let's get your character's name\n")
     name_dict = get_name_dictionary("character_name.csv", letter_index)
 
     if not name_dict:
         print("Can't start the game without the character names file.")
-        return
+        return    
 
-    gender_choice = ask_choice("Do you want a male or female character? (m/f) ", ["m", "f"])
-    character_choice = ask_choice("To get your character's name pick a letter from A-Z: ", list(string.ascii_lowercase))
-    
-    if gender_choice == "m":
-        char_name = get_character_name(name_dict, male_index, character_choice)
-    elif gender_choice == "f":
-        char_name = get_character_name(name_dict, female_index, character_choice)
+    char_name = choose_character(name_dict)
 
-    print (f"Your name is {char_name}.\n")      
-    
+    while True:
+        play_adventure(char_name)
+
+        play_again = ask_choice("Would you like to play again? (yes/no) ", ["yes", "no"])
+        if play_again == "no":
+            print("Thanks for playing!")
+            break
+
+        keep = ask_choice(f"Keep {char_name} as your character? (yes/no) ", ["yes", "no"])
+        if keep == "no":
+            char_name = choose_character(name_dict)
+
+def play_adventure(char_name):
+    """Let the player choose an adventure, then tell the story.
+    Parameters
+        Char_name: the name of the player's character
+    Return: nothing
+    """
     adventures_list = ["Space Adventure", "Ocean Adventure", "Jungle Adventure", "Random Adventure"]
     print ("Now let's choose which type of adventure you will be having.\n")
     print ("Available adventures are:")
@@ -82,6 +90,26 @@ def main():
 
     print(f"Hello {char_name}! Welcome to the {story_titles[adventure_choice]}. Enjoy!\n")
     tell_story(themes, quantity, tense)
+
+def choose_character(name_dict):
+    """Ask the player to choose a character and return the name.
+    Parameters:
+        name_dict: the dictionary of character names from the CSV file
+    Return: the chosen character name
+    """
+    female_index = 1
+    male_index = 2
+
+    gender_choice = ask_choice("Do you want a male or female character? (m/f) ", ["m", "f"])
+    character_choice = ask_choice("To get your character's name pick a letter from A-Z: ", list(string.ascii_lowercase))
+        
+    if gender_choice == "m":
+            char_name = get_character_name(name_dict, male_index, character_choice)
+    else:
+        char_name = get_character_name(name_dict, female_index, character_choice)
+    
+        print (f"Your name is {char_name}.\n")
+        return char_name
 
 def ask_choice(prompt, valid_answers):
     """Ask the player a question until they give a valid answer.
